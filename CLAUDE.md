@@ -32,7 +32,9 @@ No build step. To preview, open `index.html` in a browser.
 - Jenn works at the shop from time to time. Not a full-time
   installer, so do not list her alongside Armando and Irma.
 - Services: automotive window tint, paint protection film,
-  old tint removal, residential window tint
+  matte paint protection film (clear film that protects the paint
+  and changes the finish to matte), old tint removal, residential
+  window tint
 - Yelp: yelp.com/biz/armandos-custom-window-tint-las-vegas
 - Google: g.page/armando-s-custom-window-tint
 - Site URL: https://www.lasvegaswindowtintnv.com/
