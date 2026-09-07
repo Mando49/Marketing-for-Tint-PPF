@@ -66,7 +66,6 @@
     min-height:56px;padding:0 30px;border-radius:999px;
     font-weight:700;font-size:18px;letter-spacing:.005em;
     text-decoration:none;white-space:nowrap;
-    transition:background .18s ease,border-color .18s ease,transform .18s ease;
   }
   .btn-red{background:var(--red);color:#fff}
   .btn-red:hover{background:var(--red-2)}
@@ -169,7 +168,8 @@
   }
   .strip::-webkit-scrollbar{display:none}
   .strip figure{flex:0 0 82%;scroll-snap-align:center}
-  .strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+  .strip .ph{overflow:hidden;border-radius:6px}
+  .strip img{width:100%;aspect-ratio:4/3;object-fit:cover}
   .strip figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
   .swipe-hint{margin-top:6px;font-size:13px;color:var(--dim)}
 
@@ -193,20 +193,31 @@
   footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
   .back{font-size:16px;color:var(--paper);font-weight:600}
 
-  /* ---------- Motion ---------- */
+  /* ---------- Motion ----------
+     Everything here is inside prefers-reduced-motion: no-preference,
+     so visitors who asked their OS for less motion get none of it.
+     Reveal-on-scroll only hides elements once JavaScript has run
+     (html.js), so with JavaScript off nothing is ever hidden.
+     The hero, headline, and sticky call bar never animate. */
   @media (prefers-reduced-motion:no-preference){
-    html.js .rise{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    html.js .rise{opacity:0;transform:translateY(14px);transition:opacity .35s ease,transform .35s cubic-bezier(.2,.7,.2,1)}
     html.js .rise.in{opacity:1;transform:none}
-    html.js .rise:nth-child(2){transition-delay:.08s}
-    html.js .rise:nth-child(3){transition-delay:.16s}
-    html.js .rise:nth-child(4){transition-delay:.24s}
-    html.js .hero-img{animation:heroPhoto 1.6s cubic-bezier(.2,.7,.2,1) both}
-    html.js .hero-kicker,html.js .hero h1,html.js .hero p,html.js .hero-cta,html.js .hero-note{animation:heroText .8s cubic-bezier(.2,.7,.2,1) both}
-    html.js .hero p{animation-delay:.12s}
-    html.js .hero-cta{animation-delay:.22s}
-    html.js .hero-note{animation-delay:.32s}
-    @keyframes heroPhoto{from{transform:scale(1.06);opacity:.4}to{transform:none;opacity:1}}
-    @keyframes heroText{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    html.js .rise:nth-child(2){transition-delay:.04s}
+    html.js .rise:nth-child(3){transition-delay:.08s}
+    html.js .rise:nth-child(4){transition-delay:.12s}
+
+    /* Gallery photos grow a touch on hover; the wrapper clips them. */
+    .strip img{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+    .strip figure:hover img{transform:scale(1.04)}
+
+    /* Service rows and cards lift on hover. */
+    .svc,.card{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease}
+    .svc:hover,.card:hover{transform:translateY(-3px)}
+    .card:hover{border-color:rgba(255,255,255,.22)}
+
+    /* Color changes on links and buttons ease instead of snapping. */
+    a{transition:color .3s ease,text-decoration-color .3s ease,background-color .3s ease,border-color .3s ease}
+    .btn{transition:background-color .3s ease,border-color .3s ease,transform .3s ease}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -323,51 +334,51 @@
     <div class="wide" style="padding:0">
       <div class="strip">
         <figure class="rise">
-          <img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" loading="lazy">
+          <div class="ph"><img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" loading="lazy"></div>
           <figcaption>Tesla Model 3, paint protection film</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/red-tesla-ppf-install.jpg" alt="Paint protection film being applied to the front bumper of a red Tesla" loading="lazy">
+          <div class="ph"><img src="images/red-tesla-ppf-install.jpg" alt="Paint protection film being applied to the front bumper of a red Tesla" loading="lazy"></div>
           <figcaption>Tesla bumper, paint protection film going on</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/lexus-lc-matte-ppf-front.jpg" alt="Lexus LC with full-car matte paint protection film, front view" loading="lazy">
+          <div class="ph"><img src="images/lexus-lc-matte-ppf-front.jpg" alt="Lexus LC with full-car matte paint protection film, front view" loading="lazy"></div>
           <figcaption>Lexus LC, full-car matte paint protection film</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/lexus-lc-matte-ppf-front-quarter.jpg" alt="Lexus LC with matte paint protection film, front three-quarter view" loading="lazy">
+          <div class="ph"><img src="images/lexus-lc-matte-ppf-front-quarter.jpg" alt="Lexus LC with matte paint protection film, front three-quarter view" loading="lazy"></div>
           <figcaption>Lexus LC, matte PPF, front quarter</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/lexus-lc-matte-ppf-side-rear.jpg" alt="Lexus LC with matte paint protection film, side view from the rear" loading="lazy">
+          <div class="ph"><img src="images/lexus-lc-matte-ppf-side-rear.jpg" alt="Lexus LC with matte paint protection film, side view from the rear" loading="lazy"></div>
           <figcaption>Lexus LC, matte PPF, side</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/lexus-lc-matte-ppf-rear-quarter.jpg" alt="Lexus LC with matte paint protection film, rear three-quarter view" loading="lazy">
+          <div class="ph"><img src="images/lexus-lc-matte-ppf-rear-quarter.jpg" alt="Lexus LC with matte paint protection film, rear three-quarter view" loading="lazy"></div>
           <figcaption>Lexus LC, matte PPF, rear quarter</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/g-wagon-matte-ppf-front.jpg" alt="Mercedes G-Wagon with matte paint protection film on the front, finished" loading="lazy">
+          <div class="ph"><img src="images/g-wagon-matte-ppf-front.jpg" alt="Mercedes G-Wagon with matte paint protection film on the front, finished" loading="lazy"></div>
           <figcaption>Mercedes G-Wagon, matte PPF, finished</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/g-wagon-matte-ppf-hood.jpg" alt="Matte paint protection film going onto the hood and front of a Mercedes G-Wagon" loading="lazy">
+          <div class="ph"><img src="images/g-wagon-matte-ppf-hood.jpg" alt="Matte paint protection film going onto the hood and front of a Mercedes G-Wagon" loading="lazy"></div>
           <figcaption>G-Wagon hood, matte PPF going on</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/g-wagon-matte-ppf-install.jpg" alt="Matte paint protection film being applied around a Mercedes G-Wagon headlight" loading="lazy">
+          <div class="ph"><img src="images/g-wagon-matte-ppf-install.jpg" alt="Matte paint protection film being applied around a Mercedes G-Wagon headlight" loading="lazy"></div>
           <figcaption>G-Wagon headlight, matte PPF install</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/ferrari-430-ppf-install.jpg" alt="Paint protection film being applied to the front of a Ferrari 430" loading="lazy">
+          <div class="ph"><img src="images/ferrari-430-ppf-install.jpg" alt="Paint protection film being applied to the front of a Ferrari 430" loading="lazy"></div>
           <figcaption>Ferrari 430, paint protection film</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/black-ferrari-430-front.jpg" alt="Black Ferrari 430 after paint protection film, front view" loading="lazy">
+          <div class="ph"><img src="images/black-ferrari-430-front.jpg" alt="Black Ferrari 430 after paint protection film, front view" loading="lazy"></div>
           <figcaption>Ferrari 430, finished</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy">
+          <div class="ph"><img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy"></div>
           <figcaption>Porsche, window tint</figcaption>
         </figure>
       </div>
@@ -455,20 +466,50 @@
 }
 </script>
 
-<!-- Scroll-in reveal. Only hides elements when this script has run
-     (html.js) and the visitor allows motion, so with JavaScript off
-     nothing is ever hidden. -->
+<!-- Motion. Runs only when JavaScript is present and the visitor
+     allows motion. Without either, everything is simply visible and
+     the trust row shows its final numbers. -->
 <script>
   document.documentElement.classList.add('js');
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+  var motionOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window;
+  var rises = document.querySelectorAll('.rise');
+  if (motionOK) {
+    // Sections fade in and rise as they scroll into view.
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
-    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+    rises.forEach(function (el) { io.observe(el); });
+
+    // Trust row numbers count up from zero the first time the row is seen.
+    var trust = document.querySelector('.trust');
+    if (trust) {
+      var nums = [];
+      trust.querySelectorAll('.trust-num').forEach(function (el) {
+        var m = /^(\d+)(.*)$/.exec(el.textContent.trim());
+        if (m) nums.push({ el: el, target: parseInt(m[1], 10), suffix: m[2] });
+      });
+      if (nums.length) {
+        var tio = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (e) { return e.isIntersecting; })) return;
+          tio.disconnect();
+          var start = null, dur = 400;
+          nums.forEach(function (n) { n.el.textContent = '0' + n.suffix; });
+          function tick(ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            nums.forEach(function (n) { n.el.textContent = Math.round(n.target * eased) + n.suffix; });
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }, { threshold: 0.3 });
+        tio.observe(trust);
+      }
+    }
   } else {
-    document.querySelectorAll('.rise').forEach(function (el) { el.classList.add('in'); });
+    rises.forEach(function (el) { el.classList.add('in'); });
   }
 </script>
 
