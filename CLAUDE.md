@@ -10,8 +10,12 @@ only goal. Every change should make that easier, not harder.
 
 - `index.html` — the whole site. HTML, CSS, and the JSON-LD block
   all live in this one file.
-- `images/` — all shop photos pulled from the old WordPress site,
-  named by what they show. Only four are used on the page so far.
+- `index-v2.html`, `index-v3.html`, `index-v4.html` — alternative
+  homepage designs for comparison. `index-v4.html` is the current
+  direction: v2 layout, red/black/white palette, Armando only.
+- `tesla-window-tint.html` — Tesla-specific landing page.
+- `images/` — all shop photos, named by what they show. No photo
+  may show the old "Action Window Tinting" sign.
 - `README.md` — one-line description. Still uses the old business
   name; that is fine to leave or update.
 
@@ -24,13 +28,16 @@ No build step. To preview, open `index.html` in a browser.
   and that is expected)
 - Phone: 702-530-8779 (`tel:+17025308779`, `sms:+17025308779`)
 - Email: only1mando@gmail.com
-- Serves: Las Vegas and Henderson, NV
+- Serves: Las Vegas, Henderson, Summerlin, and North Las Vegas, NV
 - Appointment only
-- Installers: Armando and Irma, 50+ years combined in the
-  Las Vegas auto industry. 23 years installing window tint,
-  13 years installing paint protection film.
-- Jenn works at the shop from time to time. Not a full-time
-  installer, so do not list her alongside Armando and Irma.
+- Installer: Armando, sole installer. 23 years installing window
+  tint, 13 years installing paint protection film. Do not name
+  anyone else as an installer or staff.
+- Brand palette: red, black, and white. Black is the background
+  and every surface, white is the text, red is the accent only
+  (call button, text button border, section markers, trust row
+  numbers). Red stays under 10% of the screen. No gold,
+  champagne, or purple.
 - Services: automotive window tint, paint protection film,
   matte paint protection film (clear film that protects the paint
   and changes the finish to matte), old tint removal, residential

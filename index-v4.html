@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mando Auto Film | Window Tint &amp; Paint Protection in Las Vegas, NV</title>
-<meta name="description" content="Automotive window tint, paint protection film, and residential tint in Las Vegas and Henderson. By appointment. Call 702-530-8779.">
+<meta name="description" content="Automotive window tint, paint protection film, and residential tint in Las Vegas, Henderson, Summerlin, and North Las Vegas. By appointment. Call 702-530-8779.">
 <link rel="canonical" href="https://www.lasvegaswindowtintnv.com/">
 
 <meta property="og:title" content="Mando Auto Film | Las Vegas, NV">
-<meta property="og:description" content="Window tint and paint protection film in Las Vegas and Henderson. By appointment.">
+<meta property="og:description" content="Window tint and paint protection film in Las Vegas, Henderson, Summerlin, and North Las Vegas. By appointment.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.lasvegaswindowtintnv.com/">
 
@@ -17,17 +17,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
 
 <style>
-  /* ---------- Tokens ---------- */
+  /* ---------- Tokens ----------
+     Brand palette: black, white, red. Black is the background and
+     every surface. White is the text. Red is the accent only: the
+     call button, the text button border, section markers, and the
+     trust row numbers. Keep red small. */
   :root{
-    --ink:#111417;        /* page background, cool graphite */
-    --ink-2:#181C20;      /* raised surfaces */
-    --ink-3:#20262B;      /* hover / pressed */
-    --paper:#F3F1EC;      /* main text, warm off-white */
-    --muted:#A2A9AF;      /* secondary text */
-    --dim:#6F777E;        /* captions, footer */
-    --gold:#D8C28C;       /* champagne accent, buttons */
-    --gold-2:#EAD8A8;     /* button hover */
-    --line:rgba(243,241,236,.11);
+    --ink:#0B0B0C;        /* page background, black */
+    --ink-2:#141416;      /* raised surfaces */
+    --ink-3:#1C1C1F;      /* hover / pressed */
+    --paper:#FFFFFF;      /* main text, white */
+    --muted:#B9B9BE;      /* secondary text */
+    --dim:#7E7E85;        /* captions, footer */
+    --red:#E0282E;        /* accent, buttons */
+    --red-2:#F03A40;      /* button hover */
+    --line:rgba(255,255,255,.12);
     --col:620px;          /* reading column */
     --wide:1040px;        /* photos and stats */
   }
@@ -51,9 +55,9 @@
   .col{width:100%;max-width:var(--col);margin:0 auto;padding:0 22px}
   .wide{width:100%;max-width:var(--wide);margin:0 auto;padding:0 22px}
 
-  .skip{position:absolute;left:-9999px;top:12px;background:var(--gold);color:#111;padding:14px 18px;font-weight:600;z-index:100}
+  .skip{position:absolute;left:-9999px;top:12px;background:var(--red);color:#fff;padding:14px 18px;font-weight:600;z-index:100}
   .skip:focus{left:12px}
-  :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px}
 
   /* Every link that is not a button gets a 44px-tall tap area
      without moving the surrounding text. */
@@ -67,16 +71,16 @@
     text-decoration:none;white-space:nowrap;
     transition:background .18s ease,border-color .18s ease,transform .18s ease;
   }
-  .btn-gold{background:var(--gold);color:#111417}
-  .btn-gold:hover{background:var(--gold-2)}
-  .btn-gold:active{transform:scale(.98)}
-  .btn-ghost{background:transparent;color:var(--paper);border:1.5px solid rgba(243,241,236,.35)}
-  .btn-ghost:hover{border-color:var(--paper);background:rgba(243,241,236,.05)}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-2)}
+  .btn-red:active{transform:scale(.98)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1.5px solid var(--red)}
+  .btn-ghost:hover{border-color:var(--red-2);background:rgba(224,40,46,.08)}
 
   /* ---------- Sticky call bar ---------- */
   .bar{
     position:sticky;top:0;z-index:50;
-    background:rgba(17,20,23,.78);
+    background:rgba(11,11,12,.8);
     -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
     border-bottom:1px solid var(--line);
   }
@@ -86,8 +90,8 @@
     text-align:left;
   }
   .bar-name{font-weight:700;font-size:16px;letter-spacing:.01em;line-height:1.15;font-variation-settings:'wdth' 112}
-  .bar-name small{display:block;font-weight:400;font-size:12px;color:var(--muted);font-variation-settings:'wdth' 100;letter-spacing:0}
-  .bar .btn{min-height:46px;padding:0 20px;font-size:15px}
+  .bar-name small{display:block;font-weight:400;font-size:11.5px;line-height:1.3;color:var(--muted);font-variation-settings:'wdth' 100;letter-spacing:0}
+  .bar .btn{min-height:46px;padding:0 20px;font-size:15px;flex:0 0 auto}
 
   /* ---------- Hero ---------- */
   .hero{
@@ -104,7 +108,7 @@
   .hero::after{
     content:"";position:absolute;inset:0;z-index:-1;
     background:
-      linear-gradient(180deg,rgba(17,20,23,.35) 0%,rgba(17,20,23,.15) 30%,rgba(17,20,23,.82) 62%,var(--ink) 100%);
+      linear-gradient(180deg,rgba(11,11,12,.35) 0%,rgba(11,11,12,.15) 30%,rgba(11,11,12,.84) 62%,var(--ink) 100%);
   }
   .hero h1{
     font-size:clamp(40px,10.5vw,84px);
@@ -113,7 +117,7 @@
     text-wrap:balance;
     max-width:11ch;margin:0 auto;
   }
-  .hero p{margin:22px auto 0;max-width:34ch;font-size:clamp(17px,4.4vw,20px);color:#DCDAD4;text-wrap:pretty}
+  .hero p{margin:22px auto 0;max-width:34ch;font-size:clamp(17px,4.4vw,20px);color:#E6E6E9;text-wrap:pretty}
   .hero-cta{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:30px}
   .hero-cta .btn{width:100%;max-width:340px}
   .hero-note{margin-top:20px;font-size:14px;color:var(--muted)}
@@ -129,7 +133,7 @@
   .trust-grid > div:nth-last-child(-n+2){border-bottom:none}
   .trust-num{
     display:block;font-size:clamp(34px,9vw,52px);font-weight:800;line-height:1;
-    letter-spacing:-.03em;font-variation-settings:'wdth' 125;color:var(--gold);
+    letter-spacing:-.03em;font-variation-settings:'wdth' 125;color:var(--red);
   }
   .trust-num.word{font-size:clamp(24px,6.4vw,36px);padding:6px 0 4px}
   .trust-lab{display:block;margin-top:8px;font-size:14px;color:var(--muted);line-height:1.3}
@@ -140,7 +144,7 @@
     font-size:clamp(28px,7vw,42px);font-weight:700;line-height:1.05;letter-spacing:-.03em;
     font-variation-settings:'wdth' 115;text-wrap:balance;
   }
-  h2::after{content:"";display:block;width:36px;height:2px;background:var(--gold);margin:18px auto 0}
+  h2::after{content:"";display:block;width:36px;height:2px;background:var(--red);margin:18px auto 0}
   .lede{color:var(--muted);max-width:44ch;margin:18px auto 0;font-size:17px;text-wrap:pretty}
 
   /* Films */
@@ -154,8 +158,10 @@
   .svc h3{font-size:22px;font-weight:700;letter-spacing:-.02em;font-variation-settings:'wdth' 110;margin-bottom:8px}
   .svc p{color:var(--muted);max-width:46ch;margin:0 auto;font-size:16px;text-wrap:pretty}
   .svc-list{margin-top:26px;border-top:1px solid var(--line)}
+  .pricing{margin-top:26px;font-size:16px;color:var(--muted)}
+  .pricing a{color:var(--paper);font-weight:600;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px;text-decoration-thickness:1px}
 
-  /* Gallery: a swipe strip on phones, a row on wide screens */
+  /* Gallery: a swipe strip on phones, a grid on wide screens */
   .gallery{padding-bottom:64px}
   .strip{
     display:flex;gap:10px;
@@ -176,7 +182,7 @@
     max-width:26ch;margin:0 auto;text-wrap:balance;
   }
   .review blockquote::before{
-    content:"\201C";display:block;font-size:64px;line-height:.5;color:var(--gold);
+    content:"\201C";display:block;font-size:64px;line-height:.5;color:var(--dim);
     margin-bottom:22px;font-variation-settings:'wdth' 125;
   }
   .review cite{display:block;margin-top:22px;font-style:normal;font-size:15px;color:var(--muted)}
@@ -193,7 +199,7 @@
   }
   .step-n{
     display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;
-    border:1.5px solid var(--gold);color:var(--gold);font-weight:700;font-size:17px;margin-bottom:14px;
+    border:1.5px solid var(--red);color:var(--paper);font-weight:700;font-size:17px;margin-bottom:14px;
   }
   .step h3{font-size:20px;font-weight:700;letter-spacing:-.015em;margin-bottom:6px}
   .step p{color:var(--muted);max-width:38ch;margin:0 auto;font-size:16px}
@@ -202,8 +208,8 @@
   .contact dl{display:grid;gap:22px;margin-top:30px}
   .contact dt{font-size:13px;color:var(--dim);letter-spacing:.02em;margin-bottom:4px}
   .contact dd{font-size:19px;font-weight:500}
-  .contact dd a{color:var(--gold);font-weight:600;text-decoration:underline;text-decoration-color:rgba(216,194,140,.45);text-underline-offset:4px;text-decoration-thickness:1px}
-  .contact dd a:hover{text-decoration-color:var(--gold)}
+  .contact dd a{color:var(--paper);font-weight:600;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px;text-decoration-thickness:1px}
+  .contact dd a:hover{text-decoration-color:var(--paper)}
 
   /* Closer */
   .closer{padding:72px 0 80px;border-top:1px solid var(--line)}
@@ -250,12 +256,13 @@
     .hero-cta .btn{width:auto;min-width:220px}
     .bar-in{padding:10px 20px}
     .bar-name{font-size:18px}
+    .bar-name small{font-size:12px}
     .trust-grid{grid-template-columns:repeat(4,1fr)}
     .trust-grid > div{border-bottom:none;padding:34px 18px}
     .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
     .trust-grid > div:nth-child(2){border-right:1px solid var(--line)}
-    .strip{overflow:visible;padding:40px 22px 0;gap:14px}
-    .strip figure{flex:1 1 0}
+    .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;padding:40px 22px 0;gap:14px}
+    .strip figure{flex:none}
     .swipe-hint{display:none}
     .contact dl{grid-template-columns:repeat(3,1fr);gap:34px 20px;max-width:var(--wide)}
     .closer .btn{width:auto;min-width:300px}
@@ -271,9 +278,9 @@
   <div class="bar-in">
     <div class="bar-name">
       Mando Auto Film
-      <small>Las Vegas &amp; Henderson</small>
+      <small>Las Vegas &middot; Henderson &middot; Summerlin &middot; North Las Vegas</small>
     </div>
-    <a class="btn btn-gold" href="tel:+17025308779">Call now</a>
+    <a class="btn btn-red" href="tel:+17025308779">Call now</a>
   </div>
 </div>
 
@@ -285,12 +292,12 @@
          alt="" fetchpriority="high">
     <div class="col">
       <h1>Heat, glare, and rock chips stop here.</h1>
-      <p>Window tint and paint protection film, installed by hand and by appointment in Las Vegas and Henderson.</p>
+      <p>Window tint and paint protection film, installed by hand and by appointment in Las Vegas, Henderson, Summerlin, and North Las Vegas.</p>
       <div class="hero-cta">
-        <a class="btn btn-gold" href="tel:+17025308779">Call 702-530-8779</a>
-        <a class="btn btn-ghost" href="sms:+17025308779">Text us</a>
+        <a class="btn btn-red" href="tel:+17025308779">Call 702-530-8779</a>
+        <a class="btn btn-ghost" href="sms:+17025308779">Text me</a>
       </div>
-      <p class="hero-note">Text your year, make, model, and what you want done.</p>
+      <p class="hero-note">Text your year, make, model, and what you want done. Call for pricing.</p>
     </div>
   </header>
 
@@ -307,14 +314,14 @@
   <!-- ===== Films ===== -->
   <div class="films rise">
     <div class="col">
-      <p>We install <strong>LLumar</strong> paint protection film and <strong>Global</strong> window tint.</p>
+      <p>I install <strong>LLumar</strong> paint protection film and <strong>Global</strong> window tint.</p>
     </div>
   </div>
 
   <!-- ===== Services ===== -->
   <section>
     <div class="col">
-      <h2 class="rise">What we do</h2>
+      <h2 class="rise">What I do</h2>
       <p class="lede rise">Every pattern is cut to your exact vehicle, so the film fits the glass instead of getting close.</p>
 
       <div class="svc-list">
@@ -329,6 +336,11 @@
              debris instead of your finish. Partial or full coverage.</p>
         </div>
         <div class="svc rise">
+          <h3>Matte paint protection film</h3>
+          <p>Clear film that protects your paint and changes the finish to matte at the
+             same time.</p>
+        </div>
+        <div class="svc rise">
           <h3>Old tint removal</h3>
           <p>Failed, purple, or bubbling film taken off without damaging your door panels,
              defroster lines, or glass. Proper removal is what makes a re-tint come out right.</p>
@@ -339,6 +351,7 @@
              sun off your furniture and floors.</p>
         </div>
       </div>
+      <p class="pricing rise">Call for pricing: <a class="tap" href="tel:+17025308779">702-530-8779</a></p>
     </div>
   </section>
 
@@ -351,52 +364,52 @@
     <div class="wide" style="padding:0">
       <div class="strip">
         <figure class="rise">
-          <img src="images/ferrari-430-ppf-install.jpg" alt="Installer applying paint protection film to the front of a Ferrari 430" loading="lazy">
-          <figcaption>Ferrari 430, paint protection film</figcaption>
+          <img src="images/lexus-lc-matte-ppf-front.jpg" alt="Lexus LC with full-car matte paint protection film, front view" loading="lazy">
+          <figcaption>Lexus LC, full-car matte paint protection film</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/ferrari-430-ppf-hood.jpg" alt="Paint protection film being applied to a Ferrari 430 hood" loading="lazy">
-          <figcaption>Ferrari 430 hood, paint protection film</figcaption>
+          <img src="images/lexus-lc-matte-ppf-front-quarter.jpg" alt="Lexus LC with matte paint protection film, front three-quarter view" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, front quarter</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-side-rear.jpg" alt="Lexus LC with matte paint protection film, side view from the rear" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, side</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-rear-quarter.jpg" alt="Lexus LC with matte paint protection film, rear three-quarter view" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, rear quarter</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-front.jpg" alt="Mercedes G-Wagon with matte paint protection film on the front, finished" loading="lazy">
+          <figcaption>Mercedes G-Wagon, matte PPF, finished</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-hood.jpg" alt="Matte paint protection film going onto the hood and front of a Mercedes G-Wagon" loading="lazy">
+          <figcaption>G-Wagon hood, matte PPF going on</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-install.jpg" alt="Matte paint protection film being applied around a Mercedes G-Wagon headlight" loading="lazy">
+          <figcaption>G-Wagon headlight, matte PPF install</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/ferrari-430-ppf-install.jpg" alt="Paint protection film being applied to the front of a Ferrari 430" loading="lazy">
+          <figcaption>Ferrari 430, paint protection film</figcaption>
         </figure>
         <figure class="rise">
           <img src="images/black-ferrari-430-front.jpg" alt="Black Ferrari 430 after paint protection film, front view" loading="lazy">
           <figcaption>Ferrari 430, finished</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/red-porsche-911-front.jpg" alt="Red Porsche 911 in the shop, front view" loading="lazy">
-          <figcaption>Porsche 911</figcaption>
-        </figure>
-        <figure class="rise">
-          <img src="images/red-porsche-911-rear.jpg" alt="Red Porsche 911 in the shop, rear view" loading="lazy">
-          <figcaption>Porsche 911, rear</figcaption>
-        </figure>
-        <figure class="rise">
-          <img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy">
-          <figcaption>Porsche, window tint</figcaption>
-        </figure>
-        <figure class="rise">
           <img src="images/black-ferrari-430-rear.jpg" alt="Black Ferrari 430 after paint protection film, rear view" loading="lazy">
           <figcaption>Ferrari 430, rear</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/tesla-model-3-hood.jpg" alt="Tesla Model 3 front end with paint protection film" loading="lazy">
-          <figcaption>Tesla Model 3</figcaption>
+          <img src="images/red-porsche-911-front.jpg" alt="Red Porsche 911 in the shop, front view" loading="lazy">
+          <figcaption>Porsche 911</figcaption>
         </figure>
         <figure class="rise">
-          <img src="images/gmc-before-tint.jpg" alt="GMC SUV before window tint" loading="lazy">
-          <figcaption>GMC, before tint</figcaption>
-        </figure>
-        <figure class="rise">
-          <img src="images/gmc-after-tint.jpg" alt="The same GMC SUV after window tint" loading="lazy">
-          <figcaption>GMC, after tint</figcaption>
-        </figure>
-        <figure class="rise">
-          <img src="images/red-bmw-i8-shop.jpg" alt="Red BMW i8 in the shop" loading="lazy">
-          <figcaption>BMW i8</figcaption>
-        </figure>
-        <figure class="rise">
-          <img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" loading="lazy">
-          <figcaption>Tesla Model 3, paint protection film</figcaption>
+          <img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy">
+          <figcaption>Porsche, window tint</figcaption>
         </figure>
       </div>
       <p class="swipe-hint">Swipe to see more</p>
@@ -415,9 +428,9 @@
   <!-- ===== Who ===== -->
   <section class="who">
     <div class="col">
-      <h2 class="rise">Armando and Irma</h2>
-      <p class="rise">Between us we have over 50 years in the Las Vegas automobile industry.</p>
-      <p class="rise">It's a small shop and we work by appointment, so your car gets the whole bay and you deal with us directly.</p>
+      <h2 class="rise">I'm Armando.</h2>
+      <p class="rise">I've been installing window tint for 23 years and paint protection film for 13, right here in Las Vegas.</p>
+      <p class="rise">It's a small shop and I work by appointment, so your car gets the whole bay. When you call or text, you're talking to me.</p>
     </div>
   </section>
 
@@ -429,7 +442,7 @@
         <div class="step rise">
           <div class="step-n" aria-hidden="true">1</div>
           <h3>Call or text</h3>
-          <p>Tell us your vehicle and what you're after. We'll quote you and pick a time.</p>
+          <p>Tell me your vehicle and what you're after. I'll quote you and pick a time.</p>
         </div>
         <div class="step rise">
           <div class="step-n" aria-hidden="true">2</div>
@@ -439,7 +452,7 @@
         <div class="step rise">
           <div class="step-n" aria-hidden="true">3</div>
           <h3>Pick it up</h3>
-          <p>We'll walk you through the care instructions before you drive off.</p>
+          <p>I'll walk you through the care instructions before you drive off.</p>
         </div>
       </div>
     </div>
@@ -464,7 +477,11 @@
         </div>
         <div class="rise">
           <dt>Serving</dt>
-          <dd>Las Vegas &amp; Henderson</dd>
+          <dd>Las Vegas, Henderson, Summerlin &amp; North Las Vegas</dd>
+        </div>
+        <div class="rise">
+          <dt>Pricing</dt>
+          <dd>Call for pricing</dd>
         </div>
         <div class="rise">
           <dt>Reviews</dt>
@@ -482,10 +499,10 @@
   <section class="closer">
     <div class="col">
       <h2 class="rise">Ready when you are.</h2>
-      <p class="rise">Call or text and we'll get your vehicle on the schedule.</p>
+      <p class="rise">Call or text and I'll get your vehicle on the schedule.</p>
       <div class="rise">
-        <a class="btn btn-gold" href="tel:+17025308779">Call 702-530-8779</a><br>
-        <a class="btn btn-ghost" href="sms:+17025308779">Text us</a>
+        <a class="btn btn-red" href="tel:+17025308779">Call 702-530-8779</a><br>
+        <a class="btn btn-ghost" href="sms:+17025308779">Text me</a>
       </div>
     </div>
   </section>
@@ -499,7 +516,7 @@
        <a class="tap" href="tel:+17025308779">702-530-8779</a><br>
        <a class="tap" href="mailto:only1mando@gmail.com">only1mando@gmail.com</a></p>
     <p>Nevada limits how dark vehicle window tint can legally be, and the limits differ by
-       window. Ask us and we'll go over what's allowed before we install anything.</p>
+       window. Ask me and I'll go over what's allowed before I install anything.</p>
   </div>
 </footer>
 
@@ -512,7 +529,7 @@
   "url": "https://www.lasvegaswindowtintnv.com/",
   "telephone": "+1-702-530-8779",
   "email": "only1mando@gmail.com",
-  "areaServed": ["Las Vegas, NV", "Henderson, NV"],
+  "areaServed": ["Las Vegas, NV", "Henderson, NV", "Summerlin, NV", "North Las Vegas, NV"],
   "sameAs": [
     "https://www.yelp.com/biz/armandos-custom-window-tint-las-vegas",
     "https://g.page/armando-s-custom-window-tint"
