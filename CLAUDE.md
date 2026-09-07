@@ -40,9 +40,9 @@ No build step. To preview, open `index.html` in a browser.
   numbers). Red stays under 10% of the screen. No gold,
   champagne, or purple.
 - Services: automotive window tint, paint protection film,
-  matte paint protection film (clear film that protects the paint
-  and changes the finish to matte), old tint removal, residential
-  window tint
+  matte paint protection film (PPF with a matte finish: same
+  protection as clear PPF, but it turns the paint satin instead of
+  glossy), old tint removal, residential window tint
 - Film brands: Global window tint film, LLumar paint protection
   film. No other brands.
 - Warranty: lifetime warranty on window tint, 10-year warranty on
