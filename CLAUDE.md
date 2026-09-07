@@ -59,10 +59,12 @@ guesses.
 - Never invent prices, warranty terms, film brand names,
   years in business, or certifications beyond what is in the
   confirmed facts list above.
-- Never state Nevada tint law limits or VLT percentages.
-  The law varies by window position and vehicle type, and wrong
-  info creates real liability. Say the limits exist and to ask
-  the shop. The footer already does this correctly.
+- Never state Nevada tint law limits or VLT percentages without
+  verifying current law first. The law varies by window position
+  and vehicle type, and wrong info creates real liability. The
+  35% front-side-window figure in the automotive window tint
+  block on the homepage was verified against NRS 484D.440 on
+  Sep 7, 2026. Anything beyond that, verify before writing it.
 - Never remove or bury the phone number.
 - Never put a street address on any page, including the JSON-LD
   block. The address is given out when an appointment is confirmed.
