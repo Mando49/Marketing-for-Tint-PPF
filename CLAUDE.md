@@ -8,11 +8,10 @@ only goal. Every change should make that easier, not harder.
 
 ## What's in the repo
 
-- `index.html` — the whole site. HTML, CSS, and the JSON-LD block
-  all live in this one file.
-- `index-v2.html`, `index-v3.html`, `index-v4.html` — alternative
-  homepage designs for comparison. `index-v4.html` is the current
-  direction: v2 layout, red/black/white palette, Armando only.
+- `index.html` — the homepage. HTML, CSS, and the JSON-LD block
+  all live in this one file. Red/black/white palette, Armando only.
+- `index-v2.html`, `index-v3.html` — earlier homepage designs kept
+  for comparison. Not linked from anywhere.
 - `tesla-window-tint.html` — Tesla-specific landing page.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
