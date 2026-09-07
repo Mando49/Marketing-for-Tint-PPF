@@ -23,8 +23,8 @@ No build step. To preview, open `index.html` in a browser.
 ## Confirmed facts — safe to use
 
 - Business name: Mando Auto Film (formerly Armando's Custom Window
-  Tint — the old name still appears in the Yelp and Google URLs,
-  and that is expected)
+  Tint — the old name still appears in the Google URL, and that
+  is expected)
 - Phone: 702-530-8779 (`tel:+17025308779`, `sms:+17025308779`)
 - Email: only1mando@gmail.com
 - Serves: Las Vegas, Henderson, Summerlin, and North Las Vegas, NV
@@ -47,7 +47,7 @@ No build step. To preview, open `index.html` in a browser.
   film. No other brands.
 - Warranty: lifetime warranty on window tint, 10-year warranty on
   paint protection film. No other warranty terms.
-- Yelp: yelp.com/biz/armandos-custom-window-tint-las-vegas
+- Yelp: yelp.com/biz/mando-window-tinting-las-vegas-2
 - Google: g.page/armando-s-custom-window-tint
 - Site URL: https://www.lasvegaswindowtintnv.com/
 
