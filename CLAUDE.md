@@ -27,7 +27,10 @@ No build step. To preview, open `index.html` in a browser.
 - Serves: Las Vegas and Henderson, NV
 - Appointment only
 - Installers: Armando and Irma, 50+ years combined in the
-  Las Vegas auto industry
+  Las Vegas auto industry. 23 years installing window tint,
+  13 years installing paint protection film.
+- Jenn works at the shop from time to time. Not a full-time
+  installer, so do not list her alongside Armando and Irma.
 - Services: automotive window tint, paint protection film,
   old tint removal, residential window tint
 - Yelp: yelp.com/biz/armandos-custom-window-tint-las-vegas
