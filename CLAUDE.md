@@ -10,7 +10,8 @@ only goal. Every change should make that easier, not harder.
 
 - `index.html` — the whole site. HTML, CSS, and the JSON-LD block
   all live in this one file.
-- `images/` — the four gallery photos used on the page.
+- `images/` — all shop photos pulled from the old WordPress site,
+  named by what they show. Only four are used on the page so far.
 - `README.md` — one-line description. Still uses the old business
   name; that is fine to leave or update.
 
