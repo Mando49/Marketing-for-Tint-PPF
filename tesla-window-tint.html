@@ -128,13 +128,16 @@
 
   /* ---------- Trust row ---------- */
   .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  /* Hairlines come from the 1px gap over a line-colored grid, so the
+     dividers stay correct however the five stats wrap. Phones: two
+     columns, the fifth stat full width. Tablets: three then two.
+     Wide screens: all five across. */
   .trust-grid{
-    display:grid;grid-template-columns:1fr 1fr;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
     max-width:var(--wide);margin:0 auto;
   }
-  .trust-grid > div{padding:26px 14px;border-bottom:1px solid var(--line)}
-  .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
-  .trust-grid > div:nth-last-child(-n+2){border-bottom:none}
+  .trust-grid > div{padding:26px 14px;background:var(--ink)}
+  .trust-grid > div:nth-child(5){grid-column:1 / -1}
   .trust-num{
     display:block;font-size:clamp(34px,9vw,52px);font-weight:800;line-height:1;
     letter-spacing:-.03em;font-variation-settings:'wdth' 125;color:var(--red);
@@ -284,16 +287,19 @@
     .bar-name{font-size:18px}
     .bar-name small{font-size:12px}
     .bar-logo img{height:30px}
-    .trust-grid{grid-template-columns:repeat(4,1fr)}
-    .trust-grid > div{border-bottom:none;padding:34px 18px}
-    .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
-    .trust-grid > div:nth-child(2){border-right:1px solid var(--line)}
+    .trust-grid{grid-template-columns:repeat(6,1fr)}
+    .trust-grid > div{padding:34px 18px;grid-column:span 2}
+    .trust-grid > div:nth-child(n+4){grid-column:span 3}
     .cards{grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
     .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;padding:40px 22px 0;gap:14px}
     .strip figure{flex:none}
     .swipe-hint{display:none}
     .contact dl{grid-template-columns:repeat(3,1fr);gap:34px 20px;max-width:var(--wide)}
     .closer .btn{width:auto;min-width:300px}
+  }
+  @media (min-width:1024px){
+    .trust-grid{grid-template-columns:repeat(5,1fr)}
+    .trust-grid > div,.trust-grid > div:nth-child(n+4){grid-column:auto}
   }
 </style>
 </head>
@@ -337,6 +343,7 @@
       <div class="rise"><span class="trust-num">13</span><span class="trust-lab">years of paint protection film</span></div>
       <div class="rise"><span class="trust-num word">Lifetime</span><span class="trust-lab">warranty on tint</span></div>
       <div class="rise"><span class="trust-num word">10-year</span><span class="trust-lab">warranty on PPF</span></div>
+      <div class="rise"><span class="trust-num">4.9 &#9733;</span><span class="trust-lab">18 Google reviews</span></div>
     </div>
   </div>
 
@@ -592,20 +599,20 @@
     if (trust) {
       var nums = [];
       trust.querySelectorAll('.trust-num').forEach(function (el) {
-        var m = /^(\d+)(.*)$/.exec(el.textContent.trim());
-        if (m) nums.push({ el: el, target: parseInt(m[1], 10), suffix: m[2] });
+        var m = /^(\d+(?:\.\d+)?)(.*)$/.exec(el.textContent.trim());
+        if (m) nums.push({ el: el, target: parseFloat(m[1]), dec: (m[1].split('.')[1] || '').length, suffix: m[2] });
       });
       if (nums.length) {
         var tio = new IntersectionObserver(function (entries) {
           if (!entries.some(function (e) { return e.isIntersecting; })) return;
           tio.disconnect();
           var start = null, dur = 400;
-          nums.forEach(function (n) { n.el.textContent = '0' + n.suffix; });
+          nums.forEach(function (n) { n.el.textContent = (0).toFixed(n.dec) + n.suffix; });
           function tick(ts) {
             if (start === null) start = ts;
             var p = Math.min((ts - start) / dur, 1);
             var eased = 1 - Math.pow(1 - p, 3);
-            nums.forEach(function (n) { n.el.textContent = Math.round(n.target * eased) + n.suffix; });
+            nums.forEach(function (n) { n.el.textContent = (n.target * eased).toFixed(n.dec) + n.suffix; });
             if (p < 1) requestAnimationFrame(tick);
           }
           requestAnimationFrame(tick);
