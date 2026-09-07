@@ -85,11 +85,13 @@
   }
   .bar-in{
     display:flex;align-items:center;justify-content:space-between;gap:14px;
-    max-width:var(--wide);margin:0 auto;padding:9px 16px 9px 20px;
+    max-width:var(--wide);margin:0 auto;padding:5px 16px 5px 20px;
     text-align:left;
   }
   .bar-name{font-weight:700;font-size:16px;letter-spacing:.01em;line-height:1.15;font-variation-settings:'wdth' 112}
   .bar-name small{display:block;font-weight:400;font-size:11.5px;line-height:1.3;color:var(--muted);font-variation-settings:'wdth' 100;letter-spacing:0}
+  .bar-logo{display:block;line-height:0}
+  .bar-logo img{display:block;height:26px;width:auto}
   .bar .btn{min-height:46px;padding:0 20px;font-size:15px;flex:0 0 auto}
 
   /* ---------- Hero ---------- */
@@ -274,6 +276,7 @@
     .bar-in{padding:10px 20px}
     .bar-name{font-size:18px}
     .bar-name small{font-size:12px}
+    .bar-logo img{height:30px}
     .trust-grid{grid-template-columns:repeat(4,1fr)}
     .trust-grid > div{border-bottom:none;padding:34px 18px}
     .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
@@ -294,7 +297,7 @@
 <div class="bar">
   <div class="bar-in">
     <div class="bar-name">
-      Mando Auto Film
+      <a class="bar-logo" href="index.html"><img src="images/logo-header.png" alt="Mando Auto Film" width="113" height="30"></a>
       <small>Las Vegas &middot; Henderson &middot; Summerlin &middot; North Las Vegas</small>
     </div>
     <a class="btn btn-red" href="tel:+17025308779">Call now</a>
