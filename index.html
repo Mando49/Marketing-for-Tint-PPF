@@ -178,9 +178,11 @@
   }
   .strip::-webkit-scrollbar{display:none}
   .strip figure{flex:0 0 82%;scroll-snap-align:center}
-  .strip .ph{overflow:hidden;border-radius:6px}
-  .strip img{width:100%;aspect-ratio:4/3;object-fit:cover}
-  .strip figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+  .strip .ph,.films-pair .ph{overflow:hidden;border-radius:6px}
+  .strip img,.films-pair img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .strip figcaption,.films-pair figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+  /* Two photos under the films line: stacked on phones, side by side wider. */
+  .films-pair{display:grid;gap:22px;margin-top:26px}
   .swipe-hint{margin-top:6px;font-size:13px;color:var(--dim)}
 
   /* Review */
@@ -252,8 +254,8 @@
     html.js .rise:nth-child(4){transition-delay:.12s}
 
     /* Gallery photos grow a touch on hover; the wrapper clips them. */
-    .strip img{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-    .strip figure:hover img{transform:scale(1.04)}
+    .strip img,.films-pair img{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+    .strip figure:hover img,.films-pair figure:hover img{transform:scale(1.04)}
 
     /* Service rows and cards lift on hover. */
     .svc,.card{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease}
@@ -286,6 +288,7 @@
     .trust-grid > div:nth-child(2){border-right:1px solid var(--line)}
     .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;padding:40px 22px 0;gap:14px}
     .strip figure{flex:none}
+    .films-pair{grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
     .swipe-hint{display:none}
     .contact dl{grid-template-columns:repeat(3,1fr);gap:34px 20px;max-width:var(--wide)}
     .closer .btn{width:auto;min-width:300px}
@@ -338,6 +341,18 @@
   <div class="films rise">
     <div class="col">
       <p>I install <strong>LLumar</strong> paint protection film and <strong>Global</strong> window tint.</p>
+    </div>
+    <div class="wide">
+      <div class="films-pair">
+        <figure class="rise">
+          <div class="ph"><img src="images/audi-ppf-during-install.jpg" alt="Paint protection film being laid over the front bumper of a black Audi at Mando Auto Film in Las Vegas" width="1024" height="768" loading="lazy"></div>
+          <figcaption>Paint protection film</figcaption>
+        </figure>
+        <figure class="rise">
+          <div class="ph"><img src="images/black-porsche-macan.jpg" alt="Black Porsche Macan with freshly tinted windows at Mando Auto Film in Las Vegas" width="1024" height="768" loading="lazy"></div>
+          <figcaption>Window tint</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 
