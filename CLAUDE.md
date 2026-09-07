@@ -35,6 +35,10 @@ No build step. To preview, open `index.html` in a browser.
   matte paint protection film (clear film that protects the paint
   and changes the finish to matte), old tint removal, residential
   window tint
+- Film brands: Global window tint film, LLumar paint protection
+  film. No other brands.
+- Warranty: lifetime warranty on window tint, 10-year warranty on
+  paint protection film. No other warranty terms.
 - Yelp: yelp.com/biz/armandos-custom-window-tint-las-vegas
 - Google: g.page/armando-s-custom-window-tint
 - Site URL: https://www.lasvegaswindowtintnv.com/
@@ -45,7 +49,8 @@ guesses.
 ## Never do these
 
 - Never invent prices, warranty terms, film brand names,
-  years in business, or certifications.
+  years in business, or certifications beyond what is in the
+  confirmed facts list above.
 - Never state Nevada tint law limits or VLT percentages.
   The law varies by window position and vehicle type, and wrong
   info creates real liability. Say the limits exist and to ask
