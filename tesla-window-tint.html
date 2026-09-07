@@ -1,23 +1,449 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tesla Window Tint in Las Vegas | Model 3 &amp; Model Y | Mando Auto Film</title>
 <meta name="description" content="Window tint for Tesla Model 3 and Model Y in Las Vegas, Henderson, Summerlin, and North Las Vegas. Glass roof, side, and rear glass. By appointment. Call 702-530-8779.">
 <link rel="canonical" href="https://www.lasvegaswindowtintnv.com/tesla-window-tint.html">
+
 <meta property="og:title" content="Tesla Window Tint in Las Vegas | Mando Auto Film">
 <meta property="og:description" content="Window tint for Tesla Model 3 and Model Y in Las Vegas. By appointment.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.lasvegaswindowtintnv.com/tesla-window-tint.html">
-<link rel="stylesheet" href="_ds/nocturne-bb591156-275a-447f-b4fa-68637de5c371/styles.css">
-<script src="_ds/nocturne-bb591156-275a-447f-b4fa-68637de5c371/_ds_bundle.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Tokens ----------
+     Same palette as index-v4: black surfaces, white text, red only
+     for the call button, text button border, section markers, and
+     the trust row numbers. */
+  :root{
+    --ink:#0B0B0C;
+    --ink-2:#141416;
+    --ink-3:#1C1C1F;
+    --paper:#FFFFFF;
+    --muted:#B9B9BE;
+    --dim:#7E7E85;
+    --red:#E0282E;
+    --red-2:#F03A40;
+    --line:rgba(255,255,255,.12);
+    --col:620px;
+    --wide:1040px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    font-variation-settings:'wdth' 100;
+    background:var(--ink);
+    color:var(--paper);
+    line-height:1.55;
+    text-align:center;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit}
+  img{display:block;max-width:100%;height:auto}
+
+  .col{width:100%;max-width:var(--col);margin:0 auto;padding:0 22px}
+  .wide{width:100%;max-width:var(--wide);margin:0 auto;padding:0 22px}
+
+  .skip{position:absolute;left:-9999px;top:12px;background:var(--red);color:#fff;padding:14px 18px;font-weight:600;z-index:100}
+  .skip:focus{left:12px}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+  .tap{display:inline-block;padding:12px 4px;margin:-12px -4px}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-height:56px;padding:0 30px;border-radius:999px;
+    font-weight:700;font-size:18px;letter-spacing:.005em;
+    text-decoration:none;white-space:nowrap;
+    transition:background .18s ease,border-color .18s ease,transform .18s ease;
+  }
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-2)}
+  .btn-red:active{transform:scale(.98)}
+  .btn-ghost{background:transparent;color:var(--paper);border:1.5px solid var(--red)}
+  .btn-ghost:hover{border-color:var(--red-2);background:rgba(224,40,46,.08)}
+
+  /* ---------- Sticky call bar ---------- */
+  .bar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,11,12,.8);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar-in{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    max-width:var(--wide);margin:0 auto;padding:9px 16px 9px 20px;
+    text-align:left;
+  }
+  .bar-name{font-weight:700;font-size:16px;letter-spacing:.01em;line-height:1.15;font-variation-settings:'wdth' 112}
+  .bar-name small{display:block;font-weight:400;font-size:11.5px;line-height:1.3;color:var(--muted);font-variation-settings:'wdth' 100;letter-spacing:0}
+  .bar .btn{min-height:46px;padding:0 20px;font-size:15px;flex:0 0 auto}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;isolation:isolate;overflow:hidden;
+    min-height:min(88svh,760px);
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:120px 0 40px;
+  }
+  .hero-img{
+    position:absolute;inset:0;z-index:-2;
+    width:100%;height:100%;object-fit:cover;object-position:50% 40%;
+  }
+  /* The hood photo is glossy and light in places, so the overlay is
+     darker than the homepage version to keep the headline readable. */
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:
+      linear-gradient(180deg,rgba(11,11,12,.55) 0%,rgba(11,11,12,.40) 28%,rgba(11,11,12,.88) 60%,var(--ink) 100%);
+  }
+  .hero-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .hero-kicker::before{content:"";display:inline-block;width:26px;height:1px;background:var(--red);vertical-align:middle;margin-right:10px}
+  .hero h1{
+    font-size:clamp(38px,9.5vw,76px);
+    font-weight:700;line-height:.98;letter-spacing:-.035em;
+    font-variation-settings:'wdth' 118;
+    text-wrap:balance;
+    max-width:14ch;margin:0 auto;
+  }
+  .hero p{margin:22px auto 0;max-width:34ch;font-size:clamp(17px,4.4vw,20px);color:#E6E6E9;text-wrap:pretty}
+  .hero-cta{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:30px}
+  .hero-cta .btn{width:100%;max-width:340px}
+  .hero-note{margin-top:20px;font-size:14px;color:var(--muted)}
+
+  /* ---------- Trust row ---------- */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    max-width:var(--wide);margin:0 auto;
+  }
+  .trust-grid > div{padding:26px 14px;border-bottom:1px solid var(--line)}
+  .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
+  .trust-grid > div:nth-last-child(-n+2){border-bottom:none}
+  .trust-num{
+    display:block;font-size:clamp(34px,9vw,52px);font-weight:800;line-height:1;
+    letter-spacing:-.03em;font-variation-settings:'wdth' 125;color:var(--red);
+  }
+  .trust-num.word{font-size:clamp(24px,6.4vw,36px);padding:6px 0 4px}
+  .trust-lab{display:block;margin-top:8px;font-size:14px;color:var(--muted);line-height:1.3}
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0}
+  h2{
+    font-size:clamp(28px,7vw,42px);font-weight:700;line-height:1.05;letter-spacing:-.03em;
+    font-variation-settings:'wdth' 115;text-wrap:balance;
+  }
+  h2::after{content:"";display:block;width:36px;height:2px;background:var(--red);margin:18px auto 0}
+  .lede{color:var(--muted);max-width:44ch;margin:18px auto 0;font-size:17px;text-wrap:pretty}
+
+  /* Films */
+  .films{padding:34px 0;background:var(--ink-2);border-bottom:1px solid var(--line)}
+  .films p{font-size:16px;color:var(--muted);max-width:36ch;margin:0 auto}
+  .films strong{color:var(--paper);font-weight:600}
+
+  /* Why cards */
+  .cards{display:grid;gap:10px;margin-top:30px;max-width:var(--wide);margin-left:auto;margin-right:auto}
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:22px 20px}
+  .card h3{font-size:20px;font-weight:700;letter-spacing:-.015em;font-variation-settings:'wdth' 110;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15.5px;line-height:1.6;text-wrap:pretty}
+  .note{margin:24px auto 0;font-size:13px;color:var(--dim);max-width:46ch}
+
+  /* Gallery: a swipe strip on phones, a grid on wide screens */
+  .gallery{padding-bottom:64px}
+  .strip{
+    display:flex;gap:10px;
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:30px 22px 6px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .strip::-webkit-scrollbar{display:none}
+  .strip figure{flex:0 0 82%;scroll-snap-align:center}
+  .strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+  .strip figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+  .swipe-hint{margin-top:6px;font-size:13px;color:var(--dim)}
+
+  /* Contact */
+  .contact{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .contact dl{display:grid;gap:22px;margin-top:30px}
+  .contact dt{font-size:13px;color:var(--dim);letter-spacing:.02em;margin-bottom:4px}
+  .contact dd{font-size:19px;font-weight:500}
+  .contact dd a{color:var(--paper);font-weight:600;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px;text-decoration-thickness:1px}
+  .contact dd a:hover{text-decoration-color:var(--paper)}
+
+  /* Closer */
+  .closer{padding:72px 0 80px}
+  .closer p{color:var(--muted);max-width:32ch;margin:16px auto 0;font-size:17px}
+  .closer .btn{width:100%;max-width:340px;margin-top:28px;font-size:20px;min-height:62px}
+  .closer .btn-ghost{margin-top:12px}
+
+  footer{padding:36px 0 96px;font-size:14px;color:var(--dim);border-top:1px solid var(--line)}
+  footer strong{color:var(--muted);font-weight:600}
+  footer p+p{margin-top:16px;max-width:44ch;margin-left:auto;margin-right:auto}
+  footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+  .back{font-size:16px;color:var(--paper);font-weight:600}
+
+  /* ---------- Motion ---------- */
+  @media (prefers-reduced-motion:no-preference){
+    html.js .rise{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    html.js .rise.in{opacity:1;transform:none}
+    html.js .rise:nth-child(2){transition-delay:.08s}
+    html.js .rise:nth-child(3){transition-delay:.16s}
+    html.js .rise:nth-child(4){transition-delay:.24s}
+    html.js .hero-img{animation:heroPhoto 1.6s cubic-bezier(.2,.7,.2,1) both}
+    html.js .hero-kicker,html.js .hero h1,html.js .hero p,html.js .hero-cta,html.js .hero-note{animation:heroText .8s cubic-bezier(.2,.7,.2,1) both}
+    html.js .hero p{animation-delay:.12s}
+    html.js .hero-cta{animation-delay:.22s}
+    html.js .hero-note{animation-delay:.32s}
+    @keyframes heroPhoto{from{transform:scale(1.06);opacity:.4}to{transform:none;opacity:1}}
+    @keyframes heroText{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+
+  /* ---------- Wider screens ---------- */
+  @media (min-width:720px){
+    section{padding:96px 0}
+    .hero{padding:160px 0 72px;min-height:min(92svh,860px)}
+    .hero-cta{flex-direction:row;justify-content:center}
+    .hero-cta .btn{width:auto;min-width:220px}
+    .bar-in{padding:10px 20px}
+    .bar-name{font-size:18px}
+    .bar-name small{font-size:12px}
+    .trust-grid{grid-template-columns:repeat(4,1fr)}
+    .trust-grid > div{border-bottom:none;padding:34px 18px}
+    .trust-grid > div:nth-child(odd){border-right:1px solid var(--line)}
+    .trust-grid > div:nth-child(2){border-right:1px solid var(--line)}
+    .cards{grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+    .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;padding:40px 22px 0;gap:14px}
+    .strip figure{flex:none}
+    .swipe-hint{display:none}
+    .contact dl{grid-template-columns:repeat(3,1fr);gap:34px 20px;max-width:var(--wide)}
+    .closer .btn{width:auto;min-width:300px}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ===== Sticky call bar ===== -->
+<div class="bar">
+  <div class="bar-in">
+    <div class="bar-name">
+      Mando Auto Film
+      <small>Las Vegas &middot; Henderson &middot; Summerlin &middot; North Las Vegas</small>
+    </div>
+    <a class="btn btn-red" href="tel:+17025308779">Call now</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    <img class="hero-img" src="images/tesla-model-3-hood.jpg"
+         alt="" fetchpriority="high">
+    <div class="col">
+      <p class="hero-kicker">Model 3 &amp; Model Y &middot; By appointment</p>
+      <h1>Tesla window tint in Las Vegas</h1>
+      <p>Glass roof, side, and rear glass on Model 3 and Model Y, installed by appointment, one car at a time.</p>
+      <div class="hero-cta">
+        <a class="btn btn-red" href="tel:+17025308779">Call 702-530-8779</a>
+        <a class="btn btn-ghost" href="sms:+17025308779">Text me</a>
+      </div>
+      <p class="hero-note">Tell me which model you have and what you want done. Call for pricing.</p>
+    </div>
+  </header>
+
+  <!-- ===== Trust row ===== -->
+  <div class="trust">
+    <div class="trust-grid">
+      <div class="rise"><span class="trust-num">23</span><span class="trust-lab">years of window tint</span></div>
+      <div class="rise"><span class="trust-num">13</span><span class="trust-lab">years of paint protection film</span></div>
+      <div class="rise"><span class="trust-num word">Lifetime</span><span class="trust-lab">warranty on tint</span></div>
+      <div class="rise"><span class="trust-num word">10-year</span><span class="trust-lab">warranty on PPF</span></div>
+    </div>
+  </div>
+
+  <!-- ===== Films ===== -->
+  <div class="films rise">
+    <div class="col">
+      <p>I install <strong>Global</strong> window tint and <strong>LLumar</strong> paint protection film.</p>
+    </div>
+  </div>
+
+  <!-- ===== Why Tesla owners tint ===== -->
+  <section>
+    <div class="col">
+      <h2 class="rise">Why Tesla owners tint</h2>
+      <p class="lede rise">A Tesla is mostly glass, and it lives in the desert.</p>
+    </div>
+    <div class="wide">
+      <div class="cards">
+        <div class="card rise">
+          <h3>A lot of glass</h3>
+          <p>Model 3 and Model Y have far more glass area than a typical sedan or SUV, including the panoramic roof, one large overhead panel that sits right above your head.</p>
+        </div>
+        <div class="card rise">
+          <h3>Desert sun</h3>
+          <p>Las Vegas summers put sun on your car all day, from overhead as much as from the sides. Parked outside, all that glass is what the heat comes through.</p>
+        </div>
+        <div class="card rise">
+          <h3>A cooler cabin</h3>
+          <p>Film on the glass, the roof included, makes the cabin more comfortable to sit in and cuts the glare coming down through the roof on a bright day.</p>
+        </div>
+        <div class="card rise">
+          <h3>Cut to the panel</h3>
+          <p>The roof is cut as one piece to that panel's shape, and the side and rear glass to your model. I can do the roof on its own or the whole car in one visit.</p>
+        </div>
+      </div>
+      <p class="note rise">Independent shop. Not affiliated with, certified by, or endorsed by Tesla, Inc.</p>
+    </div>
+  </section>
+
+  <!-- ===== Gallery ===== -->
+  <section class="gallery">
+    <div class="col">
+      <h2 class="rise">Recent work</h2>
+      <p class="lede rise">A few of the cars that have come through the bay.</p>
+    </div>
+    <div class="wide" style="padding:0">
+      <div class="strip">
+        <figure class="rise">
+          <img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" loading="lazy">
+          <figcaption>Tesla Model 3, paint protection film</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/red-tesla-ppf-install.jpg" alt="Paint protection film being applied to the front bumper of a red Tesla" loading="lazy">
+          <figcaption>Tesla bumper, paint protection film going on</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-front.jpg" alt="Lexus LC with full-car matte paint protection film, front view" loading="lazy">
+          <figcaption>Lexus LC, full-car matte paint protection film</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-front-quarter.jpg" alt="Lexus LC with matte paint protection film, front three-quarter view" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, front quarter</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-side-rear.jpg" alt="Lexus LC with matte paint protection film, side view from the rear" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, side</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/lexus-lc-matte-ppf-rear-quarter.jpg" alt="Lexus LC with matte paint protection film, rear three-quarter view" loading="lazy">
+          <figcaption>Lexus LC, matte PPF, rear quarter</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-front.jpg" alt="Mercedes G-Wagon with matte paint protection film on the front, finished" loading="lazy">
+          <figcaption>Mercedes G-Wagon, matte PPF, finished</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-hood.jpg" alt="Matte paint protection film going onto the hood and front of a Mercedes G-Wagon" loading="lazy">
+          <figcaption>G-Wagon hood, matte PPF going on</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/g-wagon-matte-ppf-install.jpg" alt="Matte paint protection film being applied around a Mercedes G-Wagon headlight" loading="lazy">
+          <figcaption>G-Wagon headlight, matte PPF install</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/ferrari-430-ppf-install.jpg" alt="Paint protection film being applied to the front of a Ferrari 430" loading="lazy">
+          <figcaption>Ferrari 430, paint protection film</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/black-ferrari-430-front.jpg" alt="Black Ferrari 430 after paint protection film, front view" loading="lazy">
+          <figcaption>Ferrari 430, finished</figcaption>
+        </figure>
+        <figure class="rise">
+          <img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy">
+          <figcaption>Porsche, window tint</figcaption>
+        </figure>
+      </div>
+      <p class="swipe-hint">Swipe to see more</p>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact">
+    <div class="wide">
+      <h2 class="rise">Get in touch</h2>
+      <dl>
+        <div class="rise">
+          <dt>Phone</dt>
+          <dd><a class="tap" href="tel:+17025308779">702-530-8779</a></dd>
+        </div>
+        <div class="rise">
+          <dt>Email</dt>
+          <dd><a class="tap" href="mailto:only1mando@gmail.com">only1mando@gmail.com</a></dd>
+        </div>
+        <div class="rise">
+          <dt>Shop</dt>
+          <dd><a class="tap" href="https://www.google.com/maps/search/?api=1&amp;query=4073+Vanessa+Dr,+Las+Vegas,+NV+89103" target="_blank" rel="noopener">4073 Vanessa Dr, Las Vegas, NV 89103</a></dd>
+        </div>
+        <div class="rise">
+          <dt>Hours</dt>
+          <dd>By appointment</dd>
+        </div>
+        <div class="rise">
+          <dt>Serving</dt>
+          <dd>Las Vegas, Henderson, Summerlin &amp; North Las Vegas</dd>
+        </div>
+        <div class="rise">
+          <dt>Pricing</dt>
+          <dd>Call for pricing</dd>
+        </div>
+        <div class="rise">
+          <dt>Reviews</dt>
+          <dd><a class="tap" href="https://www.yelp.com/biz/armandos-custom-window-tint-las-vegas" target="_blank" rel="noopener">Read us on Yelp</a></dd>
+        </div>
+        <div class="rise">
+          <dt>Google</dt>
+          <dd><a class="tap" href="https://g.page/armando-s-custom-window-tint" target="_blank" rel="noopener">Our Google listing</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===== Closer ===== -->
+  <section class="closer">
+    <div class="col">
+      <h2 class="rise">Get your Tesla on the schedule.</h2>
+      <p class="rise">Call or text and I'll talk through your car and pick a time.</p>
+      <div class="rise">
+        <a class="btn btn-red" href="tel:+17025308779">Call 702-530-8779</a><br>
+        <a class="btn btn-ghost" href="sms:+17025308779">Text me</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="col">
+    <p><a class="back tap" href="index-v4.html">&larr; Back to Mando Auto Film home</a></p>
+    <p><strong>Mando Auto Film</strong><br>
+       <a class="tap" href="https://www.google.com/maps/search/?api=1&amp;query=4073+Vanessa+Dr,+Las+Vegas,+NV+89103" target="_blank" rel="noopener">4073 Vanessa Dr, Las Vegas, NV 89103</a><br>
+       By appointment.<br>
+       <a class="tap" href="tel:+17025308779">702-530-8779</a><br>
+       <a class="tap" href="mailto:only1mando@gmail.com">only1mando@gmail.com</a></p>
+    <p>Nevada limits how dark vehicle window tint can legally be, and the limits differ by
+       window. Ask me and I'll go over what's allowed before I install anything.</p>
+  </div>
+</footer>
+
+<!-- Local search listing info for Google. Confirmed facts only. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,244 +467,23 @@
   ]
 }
 </script>
-<style>
-  body { margin: 0; background: var(--color-bg); }
-  x-dc, #root, #root > * { display: block; width: 100%; }
-  a { color: var(--color-accent); }
-  a:hover { color: var(--color-accent-300); }
-</style>
-<style>
-  @media (prefers-reduced-motion: no-preference) {
-    [data-hover-card] { transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
-    [data-hover-card]:hover { transform: translateY(-4px); border-color: var(--color-neutral-700); box-shadow: var(--shadow-md); }
-    [data-zoom] { overflow: hidden; }
-    [data-zoom] img { transition: transform 400ms cubic-bezier(.2,.6,.2,1); }
-    [data-zoom]:hover img { transform: scale(1.04); }
-    a { transition: color 300ms ease, background-color 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
-  }
-</style>
-</helmet>
 
-<div style="background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); min-height: 100vh; width: 100%; margin: 0 auto; overflow-x: clip; text-align: center;">
-
-  <div style="position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-neutral-800);">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-      <div style="line-height: 1.15; text-align: left;">
-        <div style="font-family: var(--font-heading); font-size: 15px; letter-spacing: -0.01em;">Mando Auto Film</div>
-        <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.25; text-wrap: balance; color: color-mix(in srgb, var(--color-text) 52%, transparent);"><span style="white-space: nowrap;">Las Vegas</span> &middot; <span style="white-space: nowrap;">Henderson</span> &middot; <span style="white-space: nowrap;">Summerlin</span> &middot; <span style="white-space: nowrap;">N. Las Vegas</span></div>
-      </div>
-      <a href="tel:+17025308779" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 1px solid var(--color-accent); border-radius: var(--radius-md); color: var(--color-accent); text-decoration: none; font-size: 15px; white-space: nowrap;" style-hover="background: color-mix(in srgb, var(--color-accent) 12%, transparent);" style-active="background: color-mix(in srgb, var(--color-accent) 20%, transparent);">Call now</a>
-    </div>
-  </div>
-
-  <header style="position: relative; min-height: 72vh; display: flex; align-items: flex-end; overflow: hidden;">
-    <div style="position: absolute; inset: 0;">
-      <div class="lighten" style="position: absolute; inset: 0;">
-        <img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" style="width: 100%; height: 100%; object-fit: cover; object-position: 30% 35%;">
-      </div>
-      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 72%, transparent) 0%, color-mix(in srgb, var(--color-bg) 46%, transparent) 28%, color-mix(in srgb, var(--color-bg) 82%, transparent) 52%, color-mix(in srgb, var(--color-bg) 96%, transparent) 74%, var(--color-bg) 100%);"></div>
-      <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-bg) 78%, transparent) 42%, var(--color-bg) 100%);"></div>
-    </div>
-    <div style="position: relative; max-width: 1080px; width: 100%; margin: 0 auto; padding: 0 18px 40px;">
-      <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px;">
-        <span style="width: 26px; height: 1px; background: var(--color-accent);"></span>
-        Model 3 &amp; Model Y &middot; By appointment
-      </div>
-      <h1 style="font-family: var(--font-heading); font-size: clamp(36px, 10vw, 68px); font-weight: 500; line-height: 1; letter-spacing: -0.03em; margin: 0 auto; max-width: 18ch;">Tesla window tint in Las Vegas</h1>
-      <p style="margin: 18px auto 0; font-size: clamp(16px, 4.3vw, 20px); line-height: 1.5; max-width: 36ch; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Glass roof, side, and rear glass on Model 3 and Model Y — installed by appointment, one car at a time.</p>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px auto 0; max-width: 440px;">
-        <a href="tel:+17025308779" style="flex: 1 1 190px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; min-height: 54px; padding: 0 14px; border: 1px solid var(--color-accent); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-accent) 10%, transparent); color: var(--color-accent-100); text-decoration: none; font-size: 18px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 18%, transparent), var(--shadow-md);" style-hover="background: color-mix(in srgb, var(--color-accent) 20%, transparent);" style-active="background: color-mix(in srgb, var(--color-accent) 28%, transparent);">Call 702-530-8779</a>
-        <a href="sms:+17025308779" style="flex: 0 1 auto; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; min-height: 54px; padding: 0 18px; border: 1px solid var(--color-neutral-700); border-radius: var(--radius-md); color: var(--color-text); text-decoration: none; font-size: 18px;" style-hover="background: color-mix(in srgb, var(--color-text) 7%, transparent);" style-active="background: color-mix(in srgb, var(--color-text) 14%, transparent);">Send a text</a>
-      </div>
-      <p style="margin: 16px auto 0; max-width: 38ch; font-size: 14px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 58%, transparent);">Tell me which model you have and what you want done. Call for pricing.</p>
-    </div>
-  </header>
-
-  <section style="max-width: 1080px; margin: 0 auto; padding: 30px 18px 0;">
-    <div style="background: var(--color-surface); border: 1px solid var(--color-accent-800); border-radius: var(--radius-md); padding: 22px 20px;">
-      <div style="display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start;">
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 6px;">Experience</div>
-          <div style="font-size: 17px; line-height: 1.45;">23 years installing window tint</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 6px;">Experience</div>
-          <div style="font-size: 17px; line-height: 1.45;">13 years installing paint protection film</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 6px;">Warranty</div>
-          <div style="font-size: 17px; line-height: 1.45;">Lifetime warranty on window tint</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 6px;">Warranty</div>
-          <div style="font-size: 17px; line-height: 1.45;">10-year warranty on paint protection film</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="max-width: 1080px; margin: 0 auto; padding: 54px 18px 8px;">
-    <h2 style="font-family: var(--font-heading); font-size: clamp(26px, 6.5vw, 36px); font-weight: 500; letter-spacing: -0.02em; margin: 0;">Why Tesla owners tint</h2>
-    <p style="margin: 10px auto 0; max-width: 46ch; font-size: 16px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 62%, transparent);">A Tesla is mostly glass, and it lives in the desert.</p>
-    <div style="display: grid; gap: 10px; margin-top: 26px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-      <div style="background: var(--color-surface); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); padding: 20px;" data-hover-card>
-        <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em;">A lot of glass</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Model 3 and Model Y have far more glass area than a typical sedan or SUV — including the panoramic roof, one large overhead panel that sits right above your head.</p>
-      </div>
-      <div style="background: var(--color-surface); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); padding: 20px;" data-hover-card>
-        <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em;">Desert sun</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Las Vegas summers put sun on your car all day, from overhead as much as from the sides. Parked outside, all that glass is what the heat comes through.</p>
-      </div>
-      <div style="background: var(--color-surface); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); padding: 20px;" data-hover-card>
-        <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em;">A cooler cabin</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 68%, transparent);">Film on the glass — the roof included — makes the cabin more comfortable to sit in and cuts the glare coming down through the roof on a bright day.</p>
-      </div>
-      <div style="background: var(--color-surface); border: 1px solid var(--color-neutral-800); border-radius: var(--radius-md); padding: 20px;" data-hover-card>
-        <h3 style="font-family: var(--font-heading); font-size: 20px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em;">Cut to the panel</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 68%, transparent);">The roof is cut as one piece to that panel's shape, and the side and rear glass to your model. We can do the roof on its own or the whole car in one visit.</p>
-      </div>
-    </div>
-    <p style="margin: 22px auto 0; font-size: 13px; line-height: 1.5; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 50%, transparent);">Independent shop. Not affiliated with, certified by, or endorsed by Tesla, Inc.</p>
-  </section>
-
-  <section style="max-width: 1080px; margin: 0 auto; padding: 46px 18px 54px;">
-    <h2 style="font-family: var(--font-heading); font-size: clamp(26px, 6.5vw, 36px); font-weight: 500; letter-spacing: -0.02em; margin: 0;">Recent work</h2>
-    <p style="margin: 10px auto 22px; font-size: 16px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">A few vehicles that came through the shop.</p>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/ferrari-430-ppf-install.jpg" alt="Installer applying paint protection film to the front of a Ferrari 430" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/ferrari-430-ppf-hood.jpg" alt="Paint protection film being applied to a Ferrari 430 hood" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/black-ferrari-430-front.jpg" alt="Black Ferrari 430 after paint protection film, front view" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/red-porsche-911-front.jpg" alt="Red Porsche 911 in the shop, front view" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/red-porsche-911-rear.jpg" alt="Red Porsche 911 in the shop, rear view" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/porsche-tint.jpg" alt="Porsche with freshly installed window tint" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/black-ferrari-430-rear.jpg" alt="Black Ferrari 430 after paint protection film, rear view" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/tesla-model-3-hood.jpg" alt="Tesla Model 3 front end with paint protection film" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/gmc-before-tint.jpg" alt="GMC SUV before window tint" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/gmc-after-tint.jpg" alt="The same GMC SUV after window tint" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/red-bmw-i8-shop.jpg" alt="Red BMW i8 in the shop" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-      <div class="lighten" data-zoom style="border-radius: var(--radius-sm); overflow: hidden;">
-        <img src="images/tesla-model-3-ppf.jpg" alt="White Tesla Model 3 in the shop for paint protection film" loading="lazy" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;">
-      </div>
-    </div>
-  </section>
-
-  <section style="background: var(--color-surface); border-top: 1px solid var(--color-neutral-800); border-bottom: 1px solid var(--color-neutral-800);">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 46px 18px;">
-      <h2 style="font-family: var(--font-heading); font-size: clamp(26px, 6.5vw, 36px); font-weight: 500; letter-spacing: -0.02em; margin: 0 0 26px;">Get in touch</h2>
-      <div style="display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Phone</div>
-          <a href="tel:+17025308779" style="font-size: 20px; text-decoration: none;">702-530-8779</a>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Email</div>
-          <a href="mailto:only1mando@gmail.com" style="font-size: 17px; text-decoration: none; overflow-wrap: anywhere;">only1mando@gmail.com</a>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Shop</div>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=4073+Vanessa+Dr,+Las+Vegas,+NV+89103" target="_blank" rel="noopener" style="font-size: 17px; line-height: 1.45; text-decoration: none;">4073 Vanessa Dr<br>Las Vegas, NV 89103</a>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Hours</div>
-          <div style="font-size: 18px;">By appointment</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Serving</div>
-          <div style="font-size: 18px; line-height: 1.45;">Las Vegas, Henderson, Summerlin &amp; North Las Vegas</div>
-        </div>
-        <div>
-          <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 52%, transparent); margin-bottom: 6px;">Reviews</div>
-          <div style="display: flex; justify-content: center; gap: 16px; font-size: 17px;">
-            <a href="https://www.yelp.com/biz/armandos-custom-window-tint-las-vegas" target="_blank" rel="noopener" style="text-decoration: none;">Yelp</a>
-            <a href="https://g.page/armando-s-custom-window-tint" target="_blank" rel="noopener" style="text-decoration: none;">Google</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="position: relative; background: radial-gradient(120% 100% at 20% 0%, var(--color-section-glow) 0%, var(--color-section) 55%, var(--color-bg) 100%);">
-    <div style="max-width: 1080px; margin: 0 auto; padding: 56px 18px;">
-      <h2 style="font-family: var(--font-heading); font-size: clamp(28px, 7.5vw, 42px); font-weight: 500; letter-spacing: -0.025em; margin: 0 auto; max-width: 18ch;">Get your Tesla on the schedule</h2>
-      <p style="margin: 14px auto 26px; font-size: 17px; line-height: 1.5; max-width: 34ch; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Call or text — we'll talk through your car and pick a time. Call for pricing.</p>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 440px; margin: 0 auto;">
-        <a href="tel:+17025308779" style="flex: 1 1 190px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; min-height: 54px; padding: 0 14px; border: 1px solid var(--color-accent-300); border-radius: var(--radius-md); background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-text); text-decoration: none; font-size: 18px;" style-hover="background: color-mix(in srgb, var(--color-accent) 26%, transparent);" style-active="background: color-mix(in srgb, var(--color-accent) 34%, transparent);">Call 702-530-8779</a>
-        <a href="sms:+17025308779" style="flex: 0 1 auto; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; min-height: 54px; padding: 0 18px; border: 1px solid color-mix(in srgb, var(--color-text) 35%, transparent); border-radius: var(--radius-md); color: var(--color-text); text-decoration: none; font-size: 18px;" style-hover="background: color-mix(in srgb, var(--color-text) 10%, transparent);">Send a text</a>
-      </div>
-    </div>
-  </section>
-
-  <footer style="max-width: 1080px; margin: 0 auto; padding: 34px 18px 44px; font-size: 14px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 55%, transparent);">
-    <p style="margin: 0 0 14px;"><a href="Mando Auto Film Home.dc.html" style="font-size: 16px; text-decoration: none;">&larr; Back to Mando Auto Film home</a></p>
-    <p style="margin: 0 0 14px;"><strong style="color: var(--color-text); font-weight: 500;">Mando Auto Film</strong><br>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=4073+Vanessa+Dr,+Las+Vegas,+NV+89103" target="_blank" rel="noopener" style="text-decoration: none;">4073 Vanessa Dr, Las Vegas, NV 89103</a> &middot; By appointment<br>
-      <a href="tel:+17025308779" style="text-decoration: none;">702-530-8779</a> &middot;
-      <a href="mailto:only1mando@gmail.com" style="text-decoration: none;">only1mando@gmail.com</a></p>
-    <p style="margin: 0 auto; max-width: 60ch;">Nevada limits how dark vehicle window tint can legally be, and the limits differ by window. Ask us and we'll go over what's allowed before we install anything.</p>
-  </footer>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  componentDidMount() {
-    if (!window.matchMedia || !window.IntersectionObserver) return;
-    if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
-    const root = document.documentElement;
-    const hide = (el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 360ms ease, transform 360ms cubic-bezier(.2,.6,.2,1)';
-    };
-    const show = (el) => { el.style.opacity = ''; el.style.transform = ''; };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        const past = e.boundingClientRect.bottom <= (e.rootBounds ? e.rootBounds.top : 0);
-        if (e.isIntersecting || past) { show(e.target); io.unobserve(e.target); }
+<!-- Scroll-in reveal. Only hides elements when this script has run
+     (html.js) and the visitor allows motion, so with JavaScript off
+     nothing is ever hidden. -->
+<script>
+  document.documentElement.classList.add('js');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
-    const seen = new WeakSet();
-    const scan = () => {
-      root.querySelectorAll('section, footer').forEach((el) => {
-        if (seen.has(el) || el.closest('header')) return;
-        seen.add(el);
-        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
-        hide(el);
-        io.observe(el);
-      });
-    };
-    scan();
-    this._mo = new MutationObserver(scan);
-    this._mo.observe(root, { childList: true, subtree: true });
-    this._io = io;
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    document.querySelectorAll('.rise').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rise').forEach(function (el) { el.classList.add('in'); });
   }
-  componentWillUnmount() {
-    if (this._mo) this._mo.disconnect();
-    if (this._io) this._io.disconnect();
-  }
-}
 </script>
+
 </body>
 </html>
