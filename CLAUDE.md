@@ -30,6 +30,8 @@ No build step. To preview, open `index.html` in a browser.
 - Email: only1mando@gmail.com
 - Serves: Las Vegas, Henderson, Summerlin, and North Las Vegas, NV
 - Appointment only
+- No street address on any page. The shop is appointment-only and
+  the address is given when the appointment is confirmed.
 - Installer: Armando, sole installer. 23 years installing window
   tint, 13 years installing paint protection film. Do not name
   anyone else as an installer or staff.
@@ -63,6 +65,8 @@ guesses.
   info creates real liability. Say the limits exist and to ask
   the shop. The footer already does this correctly.
 - Never remove or bury the phone number.
+- Never put a street address on any page, including the JSON-LD
+  block. The address is given out when an appointment is confirmed.
 - Never add a customer review that the owner has not supplied.
   The one on the page (Jason G.) is real.
 
