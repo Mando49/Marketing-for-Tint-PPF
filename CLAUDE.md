@@ -10,8 +10,9 @@ only goal. Every change should make that easier, not harder.
 
 - `index.html` — the homepage. HTML, CSS, and the JSON-LD block
   all live in this one file. Red/black/white palette, Armando only.
-- `index-v2.html`, `index-v3.html` — earlier homepage designs kept
-  for comparison. Not linked from anywhere.
+- `index-v3.html` — an earlier homepage layout kept for comparison,
+  restyled in the current palette. Marked noindex. Not linked from
+  anywhere.
 - `tesla-window-tint.html` — Tesla-specific landing page.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
