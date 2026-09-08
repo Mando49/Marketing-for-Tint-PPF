@@ -17,6 +17,11 @@ only goal. Every change should make that easier, not harder.
   Add any new page to the sitemap.
 - `CNAME` — tells GitHub Pages the site lives at
   www.lasvegaswindowtintnv.com. Do not remove it.
+- `blog/`, `services/`, `contact-us/`, `hello-world/` — one tiny
+  index.html each. They exist only because the old WordPress site had
+  pages at those addresses; each one forwards visitors and Google to
+  the new site (services and contact-us to their homepage sections).
+  Marked noindex and kept out of the sitemap.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
 - `README.md` — short description for GitHub.
@@ -108,7 +113,7 @@ the repo root keeps the custom domain attached; do not remove it.
 has been submitted in Google Search Console. Add any new page to the
 sitemap.
 
-Still to do: the old WordPress site still needs removing, and its
-four old pages still need redirects to the new site: /blog/,
-/services/, /contact-us/, and /hello-world/. Nothing here depends
-on the old site; all photos are hosted locally in `images/`.
+Redirects for the old WordPress addresses (/blog/, /services/,
+/contact-us/, /hello-world/) are in place in this repo. Still to do:
+the old WordPress site itself needs removing. Nothing here depends
+on it; all photos are hosted locally in `images/`.

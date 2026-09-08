@@ -57,6 +57,8 @@
 
   .col{width:100%;max-width:var(--col);margin:0 auto;padding:0 22px}
   .wide{width:100%;max-width:var(--wide);margin:0 auto;padding:0 22px}
+  /* Anchor targets sit clear of the sticky call bar. */
+  #services,#contact{scroll-margin-top:80px}
 
   .skip{position:absolute;left:-9999px;top:12px;background:var(--red);color:#fff;padding:14px 18px;font-weight:600;z-index:100}
   .skip:focus{left:12px}
@@ -393,7 +395,7 @@
   </div>
 
   <!-- ===== Services ===== -->
-  <section>
+  <section id="services">
     <div class="col">
       <h2 class="rise">What I do</h2>
       <p class="lede rise">Every pattern is cut to your exact vehicle, so the film fits the glass instead of getting close.</p>
@@ -586,7 +588,7 @@
   </section>
 
   <!-- ===== Contact ===== -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="wide">
       <h2 class="rise">Get in touch</h2>
       <dl>
