@@ -165,6 +165,11 @@
   .svc h3{font-size:22px;font-weight:700;letter-spacing:-.02em;font-variation-settings:'wdth' 110;margin-bottom:8px}
   .svc p{color:var(--muted);max-width:46ch;margin:0 auto;font-size:16px;text-wrap:pretty}
   .svc-list{margin-top:26px;border-top:1px solid var(--line)}
+  /* Services as a card grid: each service is a bordered card with its
+     heading, copy, and photo inside. Single column on phones. */
+  .svc-grid{display:grid;gap:10px;margin-top:26px}
+  .svc-grid .svc{background:var(--ink-2);border:1px solid var(--line);border-radius:8px;padding:22px 20px}
+  .svc-grid .svc:last-child{border-bottom:1px solid var(--line)}
   .svc .svc-link{margin-top:12px;font-size:15px}
   .svc-link a{color:var(--paper);font-weight:600;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px;text-decoration-thickness:1px}
   .svc-link a:hover{text-decoration-color:var(--paper)}
@@ -281,6 +286,7 @@
     /* Service rows and cards lift on hover. */
     .svc,.card{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s ease}
     .svc:hover,.card:hover{transform:translateY(-3px)}
+    .svc-grid .svc:hover{border-color:rgba(255,255,255,.22)}
     .card:hover{border-color:rgba(255,255,255,.22)}
 
     /* Review slides cross-fade; dots ease between colors. */
@@ -314,6 +320,7 @@
     .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible;padding:40px 22px 0;gap:14px}
     .strip figure{flex:none}
     .films-pair{grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+    .svc-grid{grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-top:34px}
     .swipe-hint{display:none}
     .contact dl{grid-template-columns:repeat(3,1fr);gap:34px 20px;max-width:var(--wide)}
     .closer .btn{width:auto;min-width:300px}
@@ -391,8 +398,9 @@
     <div class="col">
       <h2 class="rise">What I do</h2>
       <p class="lede rise">Every pattern is cut to your exact vehicle, so the film fits the glass instead of getting close.</p>
-
-      <div class="svc-list">
+    </div>
+    <div class="wide">
+      <div class="svc-grid">
         <div class="svc rise">
           <h3>Automotive window tint</h3>
           <p>Film on your vehicle's glass to cut heat and glare and keep the interior
@@ -426,6 +434,8 @@
           <div class="ph"><img src="images/residential-window-tint.jpg" alt="Residential window tint before and after, Mando Auto Film, Las Vegas" width="1254" height="1254" loading="lazy"></div>
         </div>
       </div>
+    </div>
+    <div class="col">
       <p class="pricing rise">Call for pricing: <a class="tap" href="tel:+17025308779">702-530-8779</a></p>
     </div>
   </section>

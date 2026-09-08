@@ -10,12 +10,7 @@ only goal. Every change should make that easier, not harder.
 
 - `index.html` — the homepage. HTML, CSS, and the JSON-LD block
   all live in this one file. Red/black/white palette, Armando only.
-- `index-v3.html` — an earlier homepage layout kept for comparison,
-  restyled in the current palette. Marked noindex. Not linked from
-  anywhere.
-- `index-v4.html` — a copy of the homepage with the services shown
-  as a two-column card grid (v3's layout) for comparison. Marked
-  noindex. Not linked from anywhere.
+  Services are shown as a two-column card grid.
 - `tesla-window-tint.html` — Tesla-specific landing page.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
