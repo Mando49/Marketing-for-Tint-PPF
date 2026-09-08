@@ -96,9 +96,19 @@ guesses.
 - Explain changes in plain language. Give complete files,
   not fragments. The owner is not a developer.
 
-## Note
+## Hosting and domain
 
-The old WordPress site at lasvegaswindowtintnv.com is still live
-until the domain's DNS is pointed at GitHub Pages. `CNAME` is
-already in place for that switch. Nothing here depends on the old
-site; all photos are hosted locally in `images/`.
+The DNS switch is done as of Sep 7, 2026. lasvegaswindowtintnv.com
+serves this repo from GitHub Pages over HTTPS. The www CNAME points
+at mando49.github.io, four GitHub A records cover the bare domain,
+and Enforce HTTPS is on in the repo's Pages settings. `CNAME` in
+the repo root keeps the custom domain attached; do not remove it.
+
+`sitemap.xml` and `robots.txt` are in the repo root, and the sitemap
+has been submitted in Google Search Console. Add any new page to the
+sitemap.
+
+Still to do: the old WordPress site still needs removing, and its
+four old pages still need redirects to the new site: /blog/,
+/services/, /contact-us/, and /hello-world/. Nothing here depends
+on the old site; all photos are hosted locally in `images/`.
