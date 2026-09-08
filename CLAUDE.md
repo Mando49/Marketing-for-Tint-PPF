@@ -113,7 +113,9 @@ the repo root keeps the custom domain attached; do not remove it.
 has been submitted in Google Search Console. Add any new page to the
 sitemap.
 
-Redirects for the old WordPress addresses (/blog/, /services/,
-/contact-us/, /hello-world/) are in place in this repo. Still to do:
-the old WordPress site itself needs removing. Nothing here depends
-on it; all photos are hosted locally in `images/`.
+The four old WordPress paths (/blog/, /services/, /contact-us/,
+/hello-world/) now resolve to the GitHub site and redirect correctly,
+verified Sep 7, 2026. DNS no longer routes to WordPress. Whether the
+WordPress install itself has been deleted from SiteGround is still
+unconfirmed. Nothing here depends on it; all photos are hosted
+locally in `images/`.
