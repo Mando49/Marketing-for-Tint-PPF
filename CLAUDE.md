@@ -12,6 +12,11 @@ only goal. Every change should make that easier, not harder.
   all live in this one file. Red/black/white palette, Armando only.
   Services are shown as a two-column card grid.
 - `tesla-window-tint.html` — Tesla-specific landing page.
+- `sitemap.xml`, `robots.txt` — the two live pages listed for search
+  engines, and an allow-all robots file that points at the sitemap.
+  Add any new page to the sitemap.
+- `CNAME` — tells GitHub Pages the site lives at
+  www.lasvegaswindowtintnv.com. Do not remove it.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
 - `README.md` — one-line description. Still uses the old business
