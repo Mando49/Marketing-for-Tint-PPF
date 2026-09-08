@@ -81,16 +81,24 @@ guesses.
 - The phone number must be tappable everywhere it appears
   (`tel:` links). The sticky call bar at the top of the page
   must stay visible while scrolling. Keep it.
-- Keep the JSON-LD block at the bottom of `index.html` accurate.
-  Google reads it for local search. If a confirmed fact changes,
-  update it there too.
-- Plain HTML and CSS in one file. No build step, no frameworks,
-  no JavaScript unless there is no other way.
+- Keep the JSON-LD blocks at the bottom of `index.html` and
+  `tesla-window-tint.html` accurate and identical. Google reads them
+  for local search. If a confirmed fact changes, update both.
+- Plain HTML and CSS, one file per page. No build step, no
+  frameworks, no libraries. The only JavaScript is the small vanilla
+  script at the bottom of each page for the scroll reveal, the
+  trust-row count-up, and the review carousel. Every page must still
+  read fine with JavaScript off, and every animation must respect
+  prefers-reduced-motion.
+- The homepage and the Tesla page share their header, trust row,
+  films line, review carousel, contact icons, and footer. When one
+  of those changes on one page, make the same change on the other.
 - Explain changes in plain language. Give complete files,
   not fragments. The owner is not a developer.
 
 ## Note
 
-The old WordPress site at lasvegaswindowtintnv.com is still live,
-but `index.html` does not depend on it for anything. All gallery
-photos are hosted locally in `images/`.
+The old WordPress site at lasvegaswindowtintnv.com is still live
+until the domain's DNS is pointed at GitHub Pages. `CNAME` is
+already in place for that switch. Nothing here depends on the old
+site; all photos are hosted locally in `images/`.
