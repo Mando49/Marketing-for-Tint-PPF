@@ -19,8 +19,7 @@ only goal. Every change should make that easier, not harder.
   www.lasvegaswindowtintnv.com. Do not remove it.
 - `images/` — all shop photos, named by what they show. No photo
   may show the old "Action Window Tinting" sign.
-- `README.md` — one-line description. Still uses the old business
-  name; that is fine to leave or update.
+- `README.md` — short description for GitHub.
 
 No build step. To preview, open `index.html` in a browser.
 
